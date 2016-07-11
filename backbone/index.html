@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Backbone CRUD</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css" />
+        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script type="text/javascript" src="js/backbone-min.js"></script>
+        <script type="text/javascript" src="js/backbone.localStorage-min.js"></script>
+        <script type="text/javascript" src="js/helper.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/views/essence_view.js"></script>
+        <script type="text/javascript" src="js/views/essence_create_view.js"></script>
+        <script type="text/javascript" src="js/views/essence_update_view.js"></script>
+        <script type="text/javascript" src="js/views/essence_table_view.js"></script>
+        <script type="text/javascript" src="js/views/toolbar_view.js"></script>
+        <script type="text/javascript" src="js/models/essence_model.js"></script>
+        <script type="text/javascript" src="js/models/user_model.js"></script>
+        <script type="text/javascript" src="js/models/person_model.js"></script>
+        <script type="text/javascript" src="js/models/departament_model.js"></script>
+        <script type="text/javascript" src="js/models/company_model.js"></script>
+        <script type="text/javascript" src="js/models/position_model.js"></script>
+        <script type="text/javascript" src="js/collections/user_collection.js"></script>
+        <script type="text/javascript" src="js/collections/person_collection.js"></script>
+        <script type="text/javascript" src="js/collections/departament_collection.js"></script>
+        <script type="text/javascript" src="js/collections/position_collecton.js"></script>
+        <script type="text/javascript" src="js/collections/company_collection.js"></script>
+        <script type="text/javascript" src="js/router.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <ul id="essence-menu" class="essence-menu">
+                        <li> <a href="#person" data-ess="person"><i class="glyphicon glyphicon-asterisk"></i> <span>Persons</span></a></li>
+                        <li> <a href="#user" data-ess="user"><i class="glyphicon glyphicon-user"></i> <span>Users</span></a></li>
+                        <li> <a href="#position" data-ess="position"><i class="glyphicon glyphicon-briefcase"></i> <span>Positions</span></a></li>
+                        <li> <a href="#departament" data-ess="departament"><i class="glyphicon glyphicon-phone-alt"></i> <span>Departments</span></a></li>
+                        <li> <a href="#company" data-ess="company"><i class="glyphicon glyphicon-copyright-mark"></i> <span>Company</span></a></li></ul>
+                </section>
+            </aside>
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <h1 id="essence-title" class="essence-title"></h1>
+                </section>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="table-wrapper">
+                                <div id="table-actions">
+                                    <p>
+                                        <button id="new-ess" class="btn btn-success" type="button">Create</button>
+                                    </p>
+                                </div>
+                                <table id="table-content" class="table table-bordered">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script id="modalform-template" type="text/template">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title"><%=title%></h4>
+                    </div>
+                    <div class="modal-body">
+                         <form id="ess-form" method="POST" data-ess="<%=id%>" action="#" class="ess-form">
+                            <%=content%>
+                            <div class="form-group">
+                                <button class="btn btn-success save-ess" type="submit">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <script id="formcontrol-template" type="text/template">
+            <div id="form-<%=attribute%>" class="form-group">
+                <label class="control-label"><%=params.label%></label>
+                <%=formControl%>
+                <div class="help-block"></div>
+            </div>
+        </script>
+        <script id="tablerowactions-template" type="text/template">
+            <td>
+                <a href="#" data-id="<%=id%>" class="btn btn-primary btn-sm edit-ess">
+                     <span class="glyphicon glyphicon-edit"></span>
+                </a>
+                <a href="#" data-id="<%=id%>'" class="btn btn-danger btn-sm remove-ess">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            </td>
+        </script>
+        </body>
+</html>

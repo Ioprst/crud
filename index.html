@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript CRUD</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css" />
+        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/storage.js"></script>
+        <script type="text/javascript" src="js/helper.js"></script>
+        <script type="text/javascript" src="js/essence_controller.js"></script>
+        <script type="text/javascript" src="js/essence.js"></script>
+        <script type="text/javascript" src="js/company.js"></script>
+        <script type="text/javascript" src="js/department .js"></script>
+        <script type="text/javascript" src="js/position.js"></script>
+        <script type="text/javascript" src="js/user.js"></script>
+        <script type="text/javascript" src="js/person.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <ul id="essence-menu" class="essence-menu">
+                        <li> <a href="#" data-ess="person"><i class="glyphicon glyphicon-asterisk"></i> <span>Persons</span></a></li>
+                        <li> <a href="#" data-ess="user"><i class="glyphicon glyphicon-user"></i> <span>Users</span></a></li>
+                        <li> <a href="#" data-ess="position"><i class="glyphicon glyphicon-briefcase"></i> <span>Positions</span></a></li>
+                        <li> <a href="#" data-ess="departament"><i class="glyphicon glyphicon-phone-alt"></i> <span>Departments</span></a></li>
+                        <li> <a href="#" data-ess="company"><i class="glyphicon glyphicon-copyright-mark"></i> <span>Company</span></a></li></ul>
+                </section>
+            </aside>
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <h1 id="essence-title" class="essence-title"></h1>
+                </section>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="table-wrapper">
+                                <div id="table-actions">
+                                    <p>
+                                        <button id="new-ess" data-target="#new-ess" data-toggle="modal" class="btn btn-success" type="button">Create</button>
+                                    </p>
+                                </div>
+                                <table id="table-content" class="table table-bordered">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
